@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using WinForm_Controle_De_Estoque.Dados.DataSet_Dados_Do_BancoTableAdapters;
+using WinForm_Controle_De_Estoque.Dados;
+using WinForm_Controle_De_Estoque.Dados.DataSetDadosDoBancoTableAdapters;
+//using WinForm_Controle_De_Estoque.Dados.DataSetDadosDoBancoTableAdapters;
 
 namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 {
@@ -45,55 +47,56 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 			return true;
 		}
 
-		private void btnOk_Click(object sender, EventArgs e)
-		{
-			if (CaixasOK())
-			{
-				//Enquanto não temos o banco de dados
-				if (txtLogin.Text != "Eu" || txtSenha.Text != "123")
-				{
-					MessageBox.Show("Usuário ou Senha inválidos");
-					vErros++;
-					if (vErros == 3)
-					{
-						MessageBox.Show("Número de Tentativas esgotado...");
-						this.Close();
-					}
-				}
-				else
-				{
-					Properties.Settings.Default.NivelUsuarioLogado = 1;
-					Properties.Settings.Default.NomeUsuarioLogado = txtLogin.Text;
-					MDI_Menu frmMenuPrincipal = new MDI_Menu();
-					frmMenuPrincipal.Show();
-					this.Close();
-				}
-			}
-			//Quando Estivermos acessando o bancod e dados
-			/*if (CaixasOK())
-			{
-				DataSet_Dados_Do_Banco.UsuarioDataTable dtUsuario;
-				UsuarioTableAdapter taUsuario = new UsuarioTableAdapter();
-				dtUsuario = taUsuario.VerificaNivel(txtNomeUsuario.Text, txtSenha.Text);
-				if(dtUsuario.Rows.Count == 0)
-				{
-					MessageBox.Show("Usuário ou Senha inválidos");
-					vErros++;
-					if (vErros == 3)
-					{
-						MessageBox.Show("Número de Tentativas esgotado...");
-						this.Close();
-					}
-				}
-				else
-				{
-					Properties.Settings.Default.NivelUsuarioLogado = (int)dtUsuario.Rows[0]["Nivel"];
-					Properties.Settings.Default.NivelUsuarioLogado = txtLogin.Text;
-					MDI_Menu frmMenuPrincipal = new MDI_Menu();
-					frmMenuPrincipal.Show();
-					this.Close();
-				}*/
-		}
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            /*if (CaixasOK())
+            {
+                //Enquanto não temos o banco de dados
+                if (txtLogin.Text != "Eu" || txtSenha.Text != "123")
+                {
+                    MessageBox.Show("Usuário ou Senha inválidos");
+                    vErros++;
+                    if (vErros == 3)
+                    {
+                        MessageBox.Show("Número de Tentativas esgotado...");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    Properties.Settings.Default.NivelUsuarioLogado = 1;
+                    Properties.Settings.Default.NomeUsuarioLogado = txtLogin.Text;
+                    MDI_Menu frmMenuPrincipal = new MDI_Menu();
+                    frmMenuPrincipal.Show();
+                    this.Close();
+                }
+            }*/
+            //Quando Estivermos acessando o bancod e dados
+            if (CaixasOK())
+            {
+                DataSetDadosDoBanco.UsuarioDataTable dtUsuario;
+                UsuarioTableAdapter taUsuario = new UsuarioTableAdapter();
+                dtUsuario = taUsuario.GetDataNivelUsuario(txtLogin.Text, txtSenha.Text);
+                if (dtUsuario.Rows.Count == 0)
+                {
+                    MessageBox.Show("Usuário ou Senha inválidos");
+                    vErros++;
+                    if (vErros == 3)
+                    {
+                        MessageBox.Show("Número de Tentativas esgotado...");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    Properties.Settings.Default.NivelUsuarioLogado = (int)dtUsuario.Rows[0]["Nivel"];
+                    Properties.Settings.Default.NomeUsuarioLogado = txtLogin.Text;
+                    MDI_Menu frmMenuPrincipal = new MDI_Menu();
+                    frmMenuPrincipal.Show();
+                    this.Close();
+                }
+            }
+        }
 
 		private void btnCancelar_Click(object sender, EventArgs e)
 		{

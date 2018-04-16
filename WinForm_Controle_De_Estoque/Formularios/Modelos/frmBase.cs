@@ -12,6 +12,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 {
 	public partial class frmBase : Form
 	{
+		
 		public frmBase()
 		{
 			InitializeComponent();

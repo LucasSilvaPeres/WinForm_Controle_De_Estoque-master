@@ -46,5 +46,16 @@ namespace WinForm_Controle_De_Estoque.Properties {
                 this["NivelUsuarioLogado"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.168.255.252;Initial Catalog=db_05717_1_C_1_2017;User ID=05717_1_C" +
+            "_1_2017;Password=6710V00090n")]
+        public string db_05717_1_C_1_2017ConnectionString {
+            get {
+                return ((string)(this["db_05717_1_C_1_2017ConnectionString"]));
+            }
+        }
     }
 }
