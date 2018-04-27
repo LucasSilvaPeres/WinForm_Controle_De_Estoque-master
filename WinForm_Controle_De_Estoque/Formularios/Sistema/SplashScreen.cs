@@ -51,7 +51,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 		}
 		private void EfectTime()
 		{
-			SplashTimer.Interval = 10000; //define 190 milisegundos para a atuação do timer
+			SplashTimer.Interval = 1; //define 190 milisegundos para a atuação do timer
 			SplashTimer.Tick += new EventHandler(SplashTimer_Tick);//Dispara o evento Tick
 			SplashTimer.Enabled = true;//ativa o timer
 			this.Opacity = 1;//Define opacidade do form 100%

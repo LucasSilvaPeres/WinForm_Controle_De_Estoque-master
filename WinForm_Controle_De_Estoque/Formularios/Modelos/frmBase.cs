@@ -216,7 +216,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 				{
 					lblModo.Text = "Incluindo";
 					LimpaControles();
-					tabControl1.SelectNextControl(grpDgrv, true, true, true, true);
+					tabControl1.SelectNextControl(groupBox1, true, true, true, true);
 				}
 				else
 				{

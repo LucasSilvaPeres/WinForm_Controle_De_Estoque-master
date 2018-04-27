@@ -35,14 +35,14 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 			{
 				errErro.SetError(txtLogin, "");
 			}
-			if (txtSenha.Text == "")
+			if (masktxtSenha.Text == "")
 			{
-				errErro.SetError(txtSenha, "Informar a Senha");
+				errErro.SetError(masktxtSenha, "Informar a Senha");
 				return false;
 			}
 			else
 			{
-				errErro.SetError(txtSenha, "");
+				errErro.SetError(masktxtSenha, "");
 			}
 			return true;
 		}
@@ -76,7 +76,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
             {
                 DataSetDadosDoBanco.UsuarioDataTable dtUsuario;
                 UsuarioTableAdapter taUsuario = new UsuarioTableAdapter();
-                dtUsuario = taUsuario.GetDataNivelUsuario(txtLogin.Text, txtSenha.Text);
+                dtUsuario = taUsuario.GetDataNivelUsuario(txtLogin.Text, masktxtSenha.Text);
                 if (dtUsuario.Rows.Count == 0)
                 {
                     MessageBox.Show("Usuário ou Senha inválidos");
