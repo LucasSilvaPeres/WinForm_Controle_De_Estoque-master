@@ -93,7 +93,7 @@
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnGravar);
             this.panel1.Controls.Add(this.btnIncluir);
-            this.panel1.Location = new System.Drawing.Point(529, 12);
+            this.panel1.Location = new System.Drawing.Point(478, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 59);
             this.panel1.TabIndex = 0;
@@ -445,7 +445,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(364, 9);
+            this.panel3.Location = new System.Drawing.Point(320, 9);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(57, 58);
             this.panel3.TabIndex = 10;
