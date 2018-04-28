@@ -56,7 +56,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 			//Localizar
 			btnPesquisar.Enabled = (sStatus == StatusCadastro.scConsultando);
 			//Cancelar
-			btnCancelar.Visible = (sStatus == StatusCadastro.scAlterando || sStatus == StatusCadastro.scIncluindo);
+			btnCancelar.Enabled = (sStatus == StatusCadastro.scAlterando || sStatus == StatusCadastro.scIncluindo);
 			//Fechar
 			btnFechar.Enabled = true;
 		}
@@ -272,7 +272,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 			txtPar1.Text = txtPar1.Text.Replace("'", "'");
 			txtPar2.Text = txtPar2.Text.Replace("'", "'");
 			if (cmbBuscar.Text == "Todos")
-				vFiltro = "";           
+				vFiltro = "";
 			else
 			{
 				vCampo = cmbColuna.Text;
@@ -328,5 +328,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 				tabControl1.SelectTab(0);
 			}
 		}
-	}
+
+
+    }
 }

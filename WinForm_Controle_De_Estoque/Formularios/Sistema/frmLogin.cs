@@ -35,14 +35,14 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 			{
 				errErro.SetError(txtLogin, "");
 			}
-			if (masktxtSenha.Text == "")
+			if (txtSenha.Text == "")
 			{
-				errErro.SetError(masktxtSenha, "Informar a Senha");
+				errErro.SetError(txtSenha, "Informar a Senha");
 				return false;
 			}
 			else
 			{
-				errErro.SetError(masktxtSenha, "");
+				errErro.SetError(txtSenha, "");
 			}
 			return true;
 		}
@@ -76,7 +76,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
             {
                 DataSetDadosDoBanco.UsuarioDataTable dtUsuario;
                 UsuarioTableAdapter taUsuario = new UsuarioTableAdapter();
-                dtUsuario = taUsuario.GetDataNivelUsuario(txtLogin.Text, masktxtSenha.Text);
+                dtUsuario = taUsuario.GetDataNivelUsuario(txtLogin.Text, txtSenha.Text);
                 if (dtUsuario.Rows.Count == 0)
                 {
                     MessageBox.Show("Usuário ou Senha inválidos");
@@ -84,7 +84,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
                     if (vErros == 3)
                     {
                         MessageBox.Show("Número de Tentativas esgotado...");
-                        this.Close();
+                        Hide();
                     }
                 }
                 else
@@ -93,7 +93,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
                     Properties.Settings.Default.NomeUsuarioLogado = txtLogin.Text;
                     MDI_Menu frmMenuPrincipal = new MDI_Menu();
                     frmMenuPrincipal.Show();
-                    this.Close();
+                    Hide();
                 }
             }
         }

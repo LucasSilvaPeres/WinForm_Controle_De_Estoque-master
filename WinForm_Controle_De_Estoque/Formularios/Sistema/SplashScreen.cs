@@ -31,30 +31,36 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 
 		private void SplashTimer_Tick(object sender, EventArgs e)
 		{
-			if (Efect)
-			{
-				this.Opacity -= 1D;//E Diminui a opacidade do form
-									  //equivale a This.Opacity = this.Opcatity - 0.01 
-			}
-			if (this.Opacity == 0)
-			{
-				Efect = false;
-				SplashTimer.Enabled = false;//Desliga o Timer
-				frmLogin frmlogin = new frmLogin();//Instancia um form Login
-				frmlogin.Show();//Mostra o login
-				//hino.Stop();//Para a Música
-				waveOutDevice.Stop();
-				hino.Dispose();
-				waveOutDevice.Dispose();
-				this.Hide();//Oculta o formulario Splash sem tira-lo da memória
-			}
+
+                if (Efect)
+                {
+                    Opacity -= 1D;//E Diminui a opacidade do form
+                                  //equivale a This.Opacity = this.Opcatity - 0.01 
+                }
+                if (Opacity == 0)
+ 
+                {
+                    Efect = false;
+                    SplashTimer.Enabled = false;//Desliga o Timer
+                    frmLogin frmlogin = new frmLogin();//Instancia um form Login
+                    frmlogin.Show();//Mostra o login
+                                    //hino.Stop();//Para a Música
+                    waveOutDevice.Stop();
+                    hino.Dispose();
+                    waveOutDevice.Dispose();
+                    Hide();//Oculta o formulario Splash sem tira-lo da memória
+                }
+
+        
+
+ 
 		}
 		private void EfectTime()
 		{
-			SplashTimer.Interval = 1; //define 190 milisegundos para a atuação do timer
+			SplashTimer.Interval = 1000; //define 190 milisegundos para a atuação do timer
 			SplashTimer.Tick += new EventHandler(SplashTimer_Tick);//Dispara o evento Tick
 			SplashTimer.Enabled = true;//ativa o timer
-			this.Opacity = 1;//Define opacidade do form 100%
+            Opacity = 1;//Define opacidade do form 100%
 		}
 	}
 }

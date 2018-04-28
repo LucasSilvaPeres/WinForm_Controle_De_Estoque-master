@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinForm_Controle_De_Estoque.Formularios.Cadastros;
 
 namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 {
@@ -21,8 +23,8 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 		{
 			staHora.Text = DateTime.Now.ToShortDateString();
 			staUsuario.Text = "USUÁRIO ATUAL: " + Properties.Settings.Default.NomeUsuarioLogado.ToUpper();
-			//Checa_Teclas();
-		}
+            Checa_Teclas();
+        }
 
 		private void MDI_Menu_KeyDown(object sender, KeyEventArgs e)
 		{
@@ -30,36 +32,34 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 				staNum.Text = staNum.Text == "NUM" ? "" : "NUM";
 			if (e.KeyCode == Keys.CapsLock)
 				staCaps.Text = staCaps.Text == "CAP" ? "" : "CAP";
-
-			//Checa_Teclas();
 		}
-		//private void Checa_Teclas()
-		//{
-		//	//Verifica CAPSLOCK
-		//	if (Control.IsKeyLocked(Keys.CapsLock))
-		//	{
-		//		staCaps.Text = "CAP";
-		//		// staCaps.BorderStyle = Border3DStyle.Raised;
-		//	}
-		//	else
-		//	{
-		//		staCaps.Text = "";
-		//		// staCaps.BorderStyle = Border3DStyle.Sunken;
-		//	}
-		//	//Verifica NUMLOCK
-		//	if (Control.IsKeyLocked(Keys.NumLock))
-		//	{
-		//		staNum.Text = "NUM";
-		//		// staCaps.BorderStyle = Border3DStyle.Raised;
-		//	}
-		//	else
-		//	{
-		//		staNum.Text = "";
-		//		// staCaps.BorderStyle = Border3DStyle.Sunken;
-		//	}
-		//}
+        private void Checa_Teclas()
+        {
+            //Verifica CAPSLOCK
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                staCaps.Text = "CAP";
+                // staCaps.BorderStyle = Border3DStyle.Raised;
+            }
+            else
+            {
+                staCaps.Text = "";
+                // staCaps.BorderStyle = Border3DStyle.Sunken;
+            }
+            //Verifica NUMLOCK
+            if (Control.IsKeyLocked(Keys.NumLock))
+            {
+                staNum.Text = "NUM";
+                // staCaps.BorderStyle = Border3DStyle.Raised;
+            }
+            else
+            {
+                staNum.Text = "";
+                // staCaps.BorderStyle = Border3DStyle.Sunken;
+            }
+        }
 
-		private void MDI_Menu_FormClosing(object sender, FormClosingEventArgs e)
+        private void MDI_Menu_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			if (MessageBox.Show("Deseja Realmente sair?", "Confirma", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
 				e.Cancel = true;
@@ -71,27 +71,21 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 		{
 			staHora.Text = DateTime.Now.ToShortTimeString();
 		}
-		private void toolStripButton6_Click(object sender, EventArgs e)
-		{
-			//frmCadCategoria frmCategoria = new frmCadCategoria();
-			//frmCategoria.MdiParent = this;
-			//frmCategoria.Show();
-		}
 
 
 		private void toolStripButton3_Click(object sender, EventArgs e)
 		{
-			//if (Properties.Settings.Default.NivelUsuarioLogado != 1)
-			//{
-			//    MessageBox.Show("Você não tem acesso a este cadastro");
-			//}
-			//else
-			//{
-			//    frmCadUsuario frmUsuario = new frmCadUsuario();
-			//    frmUsuario.MdiParent = this;
-			//    frmUsuario.Show();
-			//}
-		}
+            if (Properties.Settings.Default.NivelUsuarioLogado != 1)
+            {
+                MessageBox.Show("Você não tem acesso a este cadastro");
+            }
+            else
+            {
+                frmCadUsuario frmUsuario = new frmCadUsuario();
+                frmUsuario.MdiParent = this;
+                frmUsuario.Show();
+            }
+        }
 
 		private void toolStripButton7_Click(object sender, EventArgs e)
 		{
@@ -107,32 +101,60 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 			//    frmVendas.Show();
 		}
 
+        private void cadastrarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadCategoria frmCategoria = new frmCadCategoria();
+            frmCategoria.MdiParent = this;
+            frmCategoria.Show();
+        }
 
-		//private void calculadoraToolStripMenuItem_Click(object sender etccccccccc)
-		//{
-		//    System.Diagnostics.Process.Start("Calc.exe");
-		//}
-		//private void rascunhoToolStripMenuItem_Click(object sender etccccccccc)
-		//{
-		//    ProcessStartInfo startInfo = new ProcessStartInfo("Notepad.exe");
-		//    startInfo.WindowStyle = ProcessWindowStyle.Maximized;
-		//    System.Diagnostics.Process.Start(startInfo);
-		//}
-		//private void internetToolStripMenuItem_Click(object sender etccccccccc)
-		//{
-		//    System.Diagnostics.Process.Start("IExplorer.exe", "www.terra.com.br");
-		//}
-		//private void cascataToolStripMenuItem_Click(object sender etccccccccc)
-		//{
-		//    this.LayoutMdi(MdiLayout.Cascade);
-		//}
-		//arranjoVertical
-		//    this.LayoutMdi(MdiLayout.TileVertical);
-		//arranjoHorizontal
-		//    this.LayoutMdi(MdiLayout.TileHorizontal); 
+        private void cadastrarUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+            if (Properties.Settings.Default.NivelUsuarioLogado != 1)
+            {
+                MessageBox.Show("Você não tem acesso a este cadastro");
+            }
+            else
+            {
+                frmCadUsuario frmusuario = new frmCadUsuario();
+                frmusuario.MdiParent = this;
+                frmusuario.Show();
+            }
+        }
 
+        private void calculadoraToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("Calc.exe");
 
+        }
 
-	}
+        private void rascunhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo("Notepad.exe");
+            startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+            System.Diagnostics.Process.Start(startInfo);
+        }
+
+        private void internetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe", "www.terra.com.br");
+        }
+
+        private void cascataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void horizontalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void verticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileVertical);
+        }
+
+    }
 }

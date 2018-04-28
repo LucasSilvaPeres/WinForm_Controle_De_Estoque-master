@@ -60,11 +60,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Cadastros\CadCadastro.cs">
+    <Compile Include="Formularios\Cadastros\frmCadCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Cadastros\CadCadastro.Designer.cs">
-      <DependentUpon>CadCadastro.cs</DependentUpon>
+    <Compile Include="Formularios\Cadastros\frmCadCategoria.Designer.cs">
+      <DependentUpon>frmCadCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cadastros\frmCadUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cadastros\frmCadUsuario.Designer.cs">
+      <DependentUpon>frmCadUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Modelos\frmBase.cs">
       <SubType>Form</SubType>
@@ -94,6 +100,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cadastros\frmCadCategoria.resx">
+      <DependentUpon>frmCadCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cadastros\frmCadUsuario.resx">
+      <DependentUpon>frmCadUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Modelos\frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>

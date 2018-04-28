@@ -50,6 +50,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tabPageCadastro = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errErro = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -65,9 +66,11 @@
             this.lblPar2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.LinkLabel();
+            this.grpDgrv = new System.Windows.Forms.GroupBox();
             this.dataSetDadosDoBanco1 = new WinForm_Controle_De_Estoque.Dados.DataSetDadosDoBanco();
             this.dataSetDadosDoBancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabPageLista.SuspendLayout();
@@ -77,8 +80,11 @@
             this.tabPageCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errErro)).BeginInit();
             this.grbPesquisa.SuspendLayout();
+            this.grpDgrv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDadosDoBanco1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDadosDoBancoBindingSource)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,7 +93,7 @@
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnGravar);
             this.panel1.Controls.Add(this.btnIncluir);
-            this.panel1.Location = new System.Drawing.Point(534, 12);
+            this.panel1.Location = new System.Drawing.Point(478, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 59);
             this.panel1.TabIndex = 0;
@@ -135,6 +141,7 @@
             // lblModo
             // 
             this.lblModo.AutoSize = true;
+            this.lblModo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblModo.Location = new System.Drawing.Point(12, 25);
             this.lblModo.Name = "lblModo";
             this.lblModo.Size = new System.Drawing.Size(34, 13);
@@ -145,7 +152,7 @@
             // 
             this.tabControl1.Controls.Add(this.TabPageLista);
             this.tabControl1.Controls.Add(this.tabPageCadastro);
-            this.tabControl1.Location = new System.Drawing.Point(15, 86);
+            this.tabControl1.Location = new System.Drawing.Point(3, 11);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(758, 252);
@@ -177,6 +184,7 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.BackColor = System.Drawing.Color.AliceBlue;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -277,6 +285,14 @@
             this.tabPageCadastro.TabIndex = 1;
             this.tabPageCadastro.Text = "Cadastro";
             this.tabPageCadastro.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(738, 217);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
             // errErro
             // 
@@ -412,31 +428,53 @@
             this.lblTitulo.TabStop = true;
             this.lblTitulo.Text = "Nome do form";
             // 
+            // grpDgrv
+            // 
+            this.grpDgrv.Controls.Add(this.tabControl1);
+            this.grpDgrv.Location = new System.Drawing.Point(12, 77);
+            this.grpDgrv.Name = "grpDgrv";
+            this.grpDgrv.Size = new System.Drawing.Size(766, 269);
+            this.grpDgrv.TabIndex = 8;
+            this.grpDgrv.TabStop = false;
+            // 
             // dataSetDadosDoBanco1
             // 
             this.dataSetDadosDoBanco1.DataSetName = "DataSetDadosDoBanco";
             this.dataSetDadosDoBanco1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // groupBox1
+            // panel3
             // 
-            this.groupBox1.Location = new System.Drawing.Point(8, 10);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(736, 210);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Location = new System.Drawing.Point(320, 9);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(57, 58);
+            this.panel3.TabIndex = 10;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 52);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // frmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkRed;
             this.ClientSize = new System.Drawing.Size(787, 460);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.grpDgrv);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.grbPesquisa);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.lblModo);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.Maroon;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBase";
             this.ShowIcon = false;
             this.Text = "Base";
@@ -454,52 +492,57 @@
             ((System.ComponentModel.ISupportInitialize)(this.errErro)).EndInit();
             this.grbPesquisa.ResumeLayout(false);
             this.grbPesquisa.PerformLayout();
+            this.grpDgrv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDadosDoBanco1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDadosDoBancoBindingSource)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
 		}
 
 		#endregion
-
-		public System.Windows.Forms.Panel panel1;
-		public System.Windows.Forms.Button btnCancelar;
-		public System.Windows.Forms.Button btnExcluir;
-		public System.Windows.Forms.Button btnGravar;
-		public System.Windows.Forms.Button btnIncluir;
-		public System.Windows.Forms.Label lblModo;
-		public System.Windows.Forms.TabControl tabControl1;
-		public System.Windows.Forms.TabPage TabPageLista;
 		public System.Windows.Forms.DataGridView dgvGrid;
 		public System.Windows.Forms.BindingNavigator bindingNavigator1;
-		public System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-		public System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-		public System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-		public System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-		public System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-		public System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-		public System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-		public System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-		public System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-		public System.Windows.Forms.TabPage tabPageCadastro;
-		public System.Windows.Forms.ToolTip toolTip1;
-		public System.Windows.Forms.ErrorProvider errErro;
-		public System.Windows.Forms.Button btnFechar;
-		public System.Windows.Forms.Button btnPesquisar;
-		public System.Windows.Forms.GroupBox grbPesquisa;
-		public System.Windows.Forms.TextBox txtPar2;
-		public System.Windows.Forms.Label label3;
-		public System.Windows.Forms.TextBox txtPar1;
+		private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+		private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+		private System.Windows.Forms.ToolTip toolTip1;
+		private System.Windows.Forms.ErrorProvider errErro;
 		public System.Windows.Forms.ComboBox cmbColuna;
-		public System.Windows.Forms.Label lblPar1;
-		public System.Windows.Forms.ComboBox cmbBuscar;
-		public System.Windows.Forms.Label lblPar2;
-		public System.Windows.Forms.Label label4;
-		public System.Windows.Forms.Button btnLocalizar;
         public System.Windows.Forms.LinkLabel lblTitulo;
+        private System.Windows.Forms.GroupBox grpDgrv;
 		public Dados.DataSetDadosDoBanco dataSetDadosDoBanco1;
-        public System.Windows.Forms.BindingSource dataSetDadosDoBancoBindingSource;
-        private System.Windows.Forms.GroupBox groupBox1;
+		public System.Windows.Forms.BindingSource dataSetDadosDoBancoBindingSource;
+        public System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Button btnExcluir;
+        public System.Windows.Forms.Button btnGravar;
+        public System.Windows.Forms.Button btnIncluir;
+        public System.Windows.Forms.Label lblModo;
+        public System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabPage TabPageLista;
+        public System.Windows.Forms.Button btnFechar;
+        public System.Windows.Forms.Button btnPesquisar;
+        public System.Windows.Forms.GroupBox grbPesquisa;
+        public System.Windows.Forms.TextBox txtPar2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtPar1;
+        public System.Windows.Forms.Label lblPar1;
+        public System.Windows.Forms.ComboBox cmbBuscar;
+        public System.Windows.Forms.Label lblPar2;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Button btnLocalizar;
+        public System.Windows.Forms.TabPage tabPageCadastro;
+        public System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

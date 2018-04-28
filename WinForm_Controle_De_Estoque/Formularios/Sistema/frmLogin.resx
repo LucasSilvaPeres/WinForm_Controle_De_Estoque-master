@@ -117,10 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADgAAAA3CAIAAADWsh6cAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAA7JJREFUaEPtmc9LFHEYxle6KQgeOngSpJMgiOLFm6IUJAiKoqcOiuJBj4rnPIiH
+        IpCgi3+CZxEFy0wzDX/nKhuaWYSVWG7mZru9O99nxpnH3ZnZnXG3w354Du33+T7v+2iy7q6BmMZsIKCk
+        HmaLw8ePk9WIHxktk13KDKu1tTY1At+npsy2EszUiUYiz2/dommGXhYVLVdUrDU0BLu7Q4ODStsdHbN5
+        eXRTCUM1AqcLC2SLYtEo/FSgId6FuRrxB2QrKds9FPcuzNXBY7okUucuoax3fZucxGgdH4qe7+9T1qMi
+        X79itAkU2m5vp9vq3A1zBQWUTVvRiwsMvQYK/VhaoszR2JiyHKGgCIavYOjvgwNatn7vnrIcoaAIhq8k
+        LbrX368sRygoguErGHq2vk7Ljp4+VZYjFBTB8BUM/Tw+Tsvkp1ZZBq+Ki5W2WlpwpEFBEQwTCyUlRhxH
+        KYKhu7299suMNdeXUVAEQ+fy7Mwm7hIMXa6stF9Gm8LBIAwXRXc6OykOIxUwlDaJ1LmBzab527fts4JN
+        3CVuiwrGmvDODo40NhobHbP7w8NGHEcpkkLRZHwYHaUsfSW+4EPRnysrlP345Ak8//ChqEDZN+XlMPzj
+        RoqKYPhHhoqeh0LyElN+JPb6+t49eLDV2ipaq6+X9yTfp6dxyZabKpqG5C0oxiUiadGsaLO5WfW5zv9V
+        VKT6XOfKoEC2tH73LgpZuSr6+s4dymRLKGTFcnoyO0uZtPUiPx9DnaCgCIaVxKen8/ObTU0rVVUieRKR
+        p5JgV1doYODTs2cnMzORL19wzwQtE8FwglIiGFbcjnOElolgOEEpEQwruaJZLGq8oPxzcoIjE7RMBEPj
+        eGLCiONIh1IiGFbcFjXWJFwm0DIRDA2bOKVEMKykWVReZMDQoWUiGPLOsaeH4jA0KCWCYSXNojg1QctE
+        MGKxyPGxTZxSIhhW3BaNXl4aa1aqq3FqgpaJYGgYWRGOdCg1V1gIw4rboo7QPhEMJyglgmElVzRX1MLp
+        4iKF0xBmOUEpEQwrllN5dqSMF2GoE5QSwbBydUq3PQpDXUBBUcJP8uMT5RcxXfWov+Gwmu6Gw0ePKC6C
+        ZyKw//AhXfIo+dWA2a6hCaLw9jY8Hb5Bin9S0NYW7O5+PzT0YWQkNDgo/964f3+xtJRuevkYh0YpwdNh
+        WwlmBqECIhg6gdW6OrP9a3cXTmZ5W1NjriGCoRN/vFRWpjybP5xlAPkeJWspZOF/OT1yRf0mV9RfYrF/
+        ywCG1dh4JJAAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="errErro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAMMOAADDDgAAAAAAAAAA
@@ -197,4 +219,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAB//////////8=
 </value>
   </data>
+  <metadata name="fileSystemWatcher1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>106, 17</value>
+  </metadata>
 </root>
