@@ -272,7 +272,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 			txtPar1.Text = txtPar1.Text.Replace("'", "'");
 			txtPar2.Text = txtPar2.Text.Replace("'", "'");
 			if (cmbBuscar.Text == "Todos")
-				vFiltro = "";
+				vFiltro = "";           
 			else
 			{
 				vCampo = cmbColuna.Text;
