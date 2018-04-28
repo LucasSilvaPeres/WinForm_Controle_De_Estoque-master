@@ -245,17 +245,19 @@ namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 			}
 		}
 
-		private void btnLocalizar_Click(object sender, EventArgs e)
-		{
-			string vFiltro = "", vOperacao = "=", vCampo = "";
-			if (cmbBuscar.Text == "Todos")
-				cmbColuna.SelectedIndex = -1;
-			else if (cmbColuna.SelectedIndex == -1 || cmbBuscar.SelectedIndex == -1)
-			{
-				MessageBox.Show("Informe os parâmetros corretamente");
-				return;
-			}
-			//Definindo a operação
+        private void btnLocalizar_Click(object sender, EventArgs e)
+        {
+            string vFiltro = "", vOperacao = "=", vCampo = "";
+            if (cmbBuscar.Text == "Todos")
+                cmbColuna.SelectedIndex = -1;
+            else if (cmbColuna.SelectedIndex == -1 || cmbBuscar.SelectedIndex == -1)
+            {
+                MessageBox.Show("Informe os parâmetros corretamente");
+                return;
+            }
+            //Definindo a operação
+            //Dictionary<string, string> Operadores = ["Igual a": "=", ];
+
 			if (cmbBuscar.Text == "Igual a")
 				vOperacao = " = ";
 			else if (cmbBuscar.Text == "Maior que")
@@ -280,11 +282,12 @@ namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 				if (dtGenerico.Columns[cmbColuna.SelectedIndex].DataType.Name == "String")
 				{
 					if (cmbBuscar.Text == "Que começa com")
-						vFiltro = vFiltro + " like '" + txtPar1.Text + "%'";
+						vFiltro += " like '" + txtPar1.Text + "%'";
 					else if (cmbBuscar.Text == "Que contém")
-						vFiltro = vFiltro + " like '%" + txtPar1.Text + "%'";
+						vFiltro += " like '%" + txtPar1.Text + "%'";
+                    //f'like "%{variavel}%"'
 					else
-						vFiltro = vFiltro + vOperacao + "''" + txtPar1.Text + "''";
+						vFiltro += vOperacao + "''" + txtPar1.Text + "''";
 				}
 				else if (dtGenerico.Columns[cmbColuna.SelectedIndex].DataType.Name == "Int32")
 				{
