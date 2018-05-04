@@ -1,6 +1,6 @@
 ﻿namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 {
-	partial class frmLogin
+	partial class FrmLogin
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,29 +29,19 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.errErro = new System.Windows.Forms.ErrorProvider(this.components);
-            this.masktxtSenha = new System.Windows.Forms.MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errErro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(227, 233);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // txtLogin
             // 
@@ -60,12 +50,19 @@
             this.txtLogin.Size = new System.Drawing.Size(291, 20);
             this.txtLogin.TabIndex = 1;
             // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(44, 134);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(175, 20);
+            this.txtSenha.TabIndex = 2;
+            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.masktxtSenha);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtLogin);
+            this.panel1.Controls.Add(this.txtSenha);
             this.panel1.Location = new System.Drawing.Point(245, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(372, 165);
@@ -93,6 +90,7 @@
             // 
             // btnOk
             // 
+            this.btnOk.ForeColor = System.Drawing.Color.Black;
             this.btnOk.Location = new System.Drawing.Point(289, 223);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
@@ -103,6 +101,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.Location = new System.Drawing.Point(473, 223);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -115,49 +114,43 @@
             // 
             this.errErro.ContainerControl = this;
             // 
-            // masktxtSenha
+            // fileSystemWatcher1
             // 
-            this.masktxtSenha.Location = new System.Drawing.Point(45, 134);
-            this.masktxtSenha.Name = "masktxtSenha";
-            this.masktxtSenha.PasswordChar = 'Ω';
-            this.masktxtSenha.PromptChar = 'B';
-            this.masktxtSenha.Size = new System.Drawing.Size(290, 20);
-            this.masktxtSenha.TabIndex = 5;
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // frmLogin
+            // FrmLogin
             // 
             this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(629, 258);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.pictureBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmLogin";
+            this.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Enter += new System.EventHandler(this.frmLogin_Enter);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errErro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.TextBox txtLogin;
+		private System.Windows.Forms.TextBox txtSenha;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnOk;
 		private System.Windows.Forms.Button btnCancelar;
 		private System.Windows.Forms.ErrorProvider errErro;
-        private System.Windows.Forms.MaskedTextBox masktxtSenha;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }

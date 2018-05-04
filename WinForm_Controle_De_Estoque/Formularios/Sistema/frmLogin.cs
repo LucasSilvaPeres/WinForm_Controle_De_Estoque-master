@@ -13,9 +13,9 @@ using WinForm_Controle_De_Estoque.Dados.DataSetDadosDoBancoTableAdapters;
 
 namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 {
-	public partial class frmLogin : Form
+	public partial class FrmLogin : Form
 	{
-		public frmLogin()
+		public FrmLogin()
 		{
 			InitializeComponent();
 		}
@@ -35,21 +35,21 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
 			{
 				errErro.SetError(txtLogin, "");
 			}
-			if (masktxtSenha.Text == "")
+			if (txtSenha.Text == "")
 			{
-				errErro.SetError(masktxtSenha, "Informar a Senha");
+				errErro.SetError(txtSenha, "Informar a Senha");
 				return false;
 			}
 			else
 			{
-				errErro.SetError(masktxtSenha, "");
+				errErro.SetError(txtSenha, "");
 			}
 			return true;
 		}
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            /*if (CaixasOK())
+            if (CaixasOK())
             {
                 //Enquanto não temos o banco de dados
                 if (txtLogin.Text != "Eu" || txtSenha.Text != "123")
@@ -66,17 +66,18 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
                 {
                     Properties.Settings.Default.NivelUsuarioLogado = 1;
                     Properties.Settings.Default.NomeUsuarioLogado = txtLogin.Text;
-                    MDI_Menu frmMenuPrincipal = new MDI_Menu();
+                    FrmMenu frmMenuPrincipal = new FrmMenu();
                     frmMenuPrincipal.Show();
                     this.Close();
                 }
-            }*/
+            }
+            /*
             //Quando Estivermos acessando o bancod e dados
             if (CaixasOK())
             {
                 DataSetDadosDoBanco.UsuarioDataTable dtUsuario;
                 UsuarioTableAdapter taUsuario = new UsuarioTableAdapter();
-                dtUsuario = taUsuario.GetDataNivelUsuario(txtLogin.Text, masktxtSenha.Text);
+                dtUsuario = taUsuario.GetDataNivelUsuario(txtLogin.Text, txtSenha.Text);
                 if (dtUsuario.Rows.Count == 0)
                 {
                     MessageBox.Show("Usuário ou Senha inválidos");
@@ -84,7 +85,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
                     if (vErros == 3)
                     {
                         MessageBox.Show("Número de Tentativas esgotado...");
-                        this.Close();
+                        Hide();
                     }
                 }
                 else
@@ -93,9 +94,9 @@ namespace WinForm_Controle_De_Estoque.Formularios.Sistema
                     Properties.Settings.Default.NomeUsuarioLogado = txtLogin.Text;
                     MDI_Menu frmMenuPrincipal = new MDI_Menu();
                     frmMenuPrincipal.Show();
-                    this.Close();
+                    Hide();
                 }
-            }
+            }*/
         }
 
 		private void btnCancelar_Click(object sender, EventArgs e)

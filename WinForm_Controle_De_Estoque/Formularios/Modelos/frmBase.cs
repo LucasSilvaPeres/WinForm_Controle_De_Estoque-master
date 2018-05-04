@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 {
-	public partial class frmBase : Form
+	public partial class FrmBase : Form
 	{
 		
-		public frmBase()
+		public FrmBase()
 		{
 			InitializeComponent();
 		}
@@ -56,7 +56,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 			//Localizar
 			btnPesquisar.Enabled = (sStatus == StatusCadastro.scConsultando);
 			//Cancelar
-			btnCancelar.Visible = (sStatus == StatusCadastro.scAlterando || sStatus == StatusCadastro.scIncluindo);
+			btnCancelar.Enabled = (sStatus == StatusCadastro.scAlterando || sStatus == StatusCadastro.scIncluindo);
 			//Fechar
 			btnFechar.Enabled = true;
 		}
@@ -328,5 +328,7 @@ namespace WinForm_Controle_De_Estoque.Formularios.Modelos
 				tabControl1.SelectTab(0);
 			}
 		}
-	}
+
+
+    }
 }
